@@ -2,11 +2,10 @@
   "name": "1953/KJV Interliniêre Bybel met TSK verwysings",
   "short_name": "1953/KJV Interliniêre Bybel",
   "description": "Afrikaanse en Engelse Bybel met Treasury of Scripture Knowledge verwysings",
-  "start_url": "/?utm_source=web_app_manifest",
+  "start_url": "/bybel2/index.html/?utm_source=web_app_manifest",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "id": "/?utm_source=web_app_manifest",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",
