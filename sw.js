@@ -1,1 +1,131 @@
-if(!self.define){let e,s={};const c=(c,r)=>(c=new URL(c+".js",r).href,s[c]||new Promise((s=>{if("document"in self){const e=document.createElement("script");e.src=c,e.onload=s,document.head.appendChild(e)}else e=c,importScripts(c),s()})).then((()=>{let e=s[c];if(!e)throw new Error(`Module ${c} didn’t register its module`);return e})));self.define=(r,o)=>{const l=e||("document"in self?document.currentScript.src:"")||location.href;if(s[l])return;let i={};const b=e=>c(e,l),n={module:{uri:l},exports:i,require:b};s[l]=Promise.all(r.map((e=>n[e]||b(e)))).then((e=>(o(...e),i)))}}define(["./workbox-aebfe784"],(function(e){"use strict";self.addEventListener("message",(e=>{e.data&&"SKIP_WAITING"===e.data.type&&self.skipWaiting()})),e.precacheAndRoute([{url:"/bybel2/bc9faba2.js",revision:"cbb8fe0512698f99276af0ab7515356d"},{url:"/bybel2/index.html",revision:"0ae11fac6bd64eab205cc636ef322eb8"},{url:"/bybel2/manifest.webmanifest",revision:"7f1b3ba7cd8d063786c3d1980fc4ffd5"},{url:"/bybel2/resources/roboto-300-400-500.css",revision:"8d10404d2755d737f4f360a77440be6c"},{url:"/bybel2/resources/shoelace/styles/component.styles.js",revision:"312dd4c39d3c43ab268ffd75d328816c"},{url:"/bybel2/resources/shoelace/styles/form-control.styles.js",revision:"1d1c48c0255c9d7cfd2c65735b11428e"},{url:"/bybel2/resources/shoelace/themes/dark.css",revision:"89f989f374b4e8f2b4b8efe76ccb1dc3"},{url:"/bybel2/resources/shoelace/themes/dark.styles.js",revision:"1d9b377611c62bbad60b61d066671850"},{url:"/bybel2/resources/shoelace/themes/light.css",revision:"4d3910c1a8181ef75df91ad104adbea3"},{url:"/bybel2/resources/shoelace/themes/light.styles.js",revision:"7537cfb8c3b9c5418b509d958c3fb99d"}],{}),e.registerRoute(new e.NavigationRoute(e.createHandlerBoundToURL("/bybel2/index.html"))),e.registerRoute("polyfills/*.js",new e.CacheFirst,"GET"),e.registerRoute(/images\/.*$/,new e.CacheFirst({cacheName:"images",plugins:[new e.ExpirationPlugin({maxEntries:60,maxAgeSeconds:2592e3})]}),"GET"),e.registerRoute(/resources\/.*$/,new e.CacheFirst({cacheName:"resources",plugins:[new e.ExpirationPlugin({maxAgeSeconds:2592e3})]}),"GET")}));
+/**
+ * Copyright 2018 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// If the loader is already loaded, just stop.
+if (!self.define) {
+  let registry = {};
+
+  // Used for `eval` and `importScripts` where we can't get script URL by other means.
+  // In both cases, it's safe to use a global var because those functions are synchronous.
+  let nextDefineUri;
+
+  const singleRequire = (uri, parentUri) => {
+    uri = new URL(uri + ".js", parentUri).href;
+    return registry[uri] || (
+      
+        new Promise(resolve => {
+          if ("document" in self) {
+            const script = document.createElement("script");
+            script.src = uri;
+            script.onload = resolve;
+            document.head.appendChild(script);
+          } else {
+            nextDefineUri = uri;
+            importScripts(uri);
+            resolve();
+          }
+        })
+      
+      .then(() => {
+        let promise = registry[uri];
+        if (!promise) {
+          throw new Error(`Module ${uri} didn’t register its module`);
+        }
+        return promise;
+      })
+    );
+  };
+
+  self.define = (depsNames, factory) => {
+    const uri = nextDefineUri || ("document" in self ? document.currentScript.src : "") || location.href;
+    if (registry[uri]) {
+      // Module is already loading or loaded.
+      return;
+    }
+    let exports = {};
+    const require = depUri => singleRequire(depUri, uri);
+    const specialDeps = {
+      module: { uri },
+      exports,
+      require
+    };
+    registry[uri] = Promise.all(depsNames.map(
+      depName => specialDeps[depName] || require(depName)
+    )).then(deps => {
+      factory(...deps);
+      return exports;
+    });
+  };
+}
+define(['./workbox-b1909f40'], (function (workbox) { 'use strict';
+
+  self.addEventListener('message', event => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+      self.skipWaiting();
+    }
+  });
+
+  /**
+   * The precacheAndRoute() method efficiently caches and responds to
+   * requests for URLs in the manifest.
+   * See https://goo.gl/S9QRab
+   */
+  workbox.precacheAndRoute([{
+    "url": "/bybel2/bc9faba2.js",
+    "revision": "cbb8fe0512698f99276af0ab7515356d"
+  }, {
+    "url": "/bybel2/index.html",
+    "revision": "0ae11fac6bd64eab205cc636ef322eb8"
+  }, {
+    "url": "/bybel2/manifest.webmanifest",
+    "revision": "7f1b3ba7cd8d063786c3d1980fc4ffd5"
+  }, {
+    "url": "/bybel2/resources/roboto-300-400-500.css",
+    "revision": "8d10404d2755d737f4f360a77440be6c"
+  }, {
+    "url": "/bybel2/resources/shoelace/styles/component.styles.js",
+    "revision": "312dd4c39d3c43ab268ffd75d328816c"
+  }, {
+    "url": "/bybel2/resources/shoelace/styles/form-control.styles.js",
+    "revision": "1d1c48c0255c9d7cfd2c65735b11428e"
+  }, {
+    "url": "/bybel2/resources/shoelace/themes/dark.css",
+    "revision": "89f989f374b4e8f2b4b8efe76ccb1dc3"
+  }, {
+    "url": "/bybel2/resources/shoelace/themes/dark.styles.js",
+    "revision": "1d9b377611c62bbad60b61d066671850"
+  }, {
+    "url": "/bybel2/resources/shoelace/themes/light.css",
+    "revision": "4d3910c1a8181ef75df91ad104adbea3"
+  }, {
+    "url": "/bybel2/resources/shoelace/themes/light.styles.js",
+    "revision": "7537cfb8c3b9c5418b509d958c3fb99d"
+  }], {});
+  workbox.registerRoute(new workbox.NavigationRoute(workbox.createHandlerBoundToURL("/bybel2/index.html")));
+  workbox.registerRoute(/polyfills\/*.js$/, new workbox.CacheFirst(), 'GET');
+  workbox.registerRoute(/images\/.*$/, new workbox.CacheFirst({
+    "cacheName": "images",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 60,
+      maxAgeSeconds: 2592000
+    })]
+  }), 'GET');
+  workbox.registerRoute(/resources\/.*$/, new workbox.CacheFirst({
+    "cacheName": "resources",
+    plugins: [new workbox.ExpirationPlugin({
+      maxAgeSeconds: 2592000
+    })]
+  }), 'GET');
+
+}));
+//# sourceMappingURL=sw.js.map
