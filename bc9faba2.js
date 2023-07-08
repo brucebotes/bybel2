@@ -2121,6 +2121,7 @@ Exit
           </sl-button>`))}
       </sl-dialog>
       <sl-drawer label="Bybel boeke" placement="start">
+      <!--
       <div style="align-self: center;"
           slot="header-actions" 
        > 
@@ -2130,7 +2131,8 @@ Exit
         >
         </sl-icon-button>
         <tool-tip inert role="tooltip" tip-position="left">Switch theme</tool-tip>
-      </div>    
+      </div>
+      -->
       ${this.render_menu()}
       </sl-drawer>
       <bible-head 
