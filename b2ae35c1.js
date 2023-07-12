@@ -1,4 +1,4 @@
-import{P as e,x as t,i,k as a,a as o}from"./0917a4d2.js";let r=class extends e{render(){return t`
+import{P as e,x as t,i,k as a,a as o}from"./561b0dae.js";let r=class extends e{render(){return t`
       <section>
         <h1>About</h1>
 
