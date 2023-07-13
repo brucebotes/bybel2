@@ -1,9 +1,11 @@
 .loader {
+  /*
   position: fixed;
   top: calc(100vh / 2 - 75px);
   left: calc(100vw / 2 - 75px);
   z-index: var(--sl-z-index-toast);
-  width: 50px;
+  */
+  width: 75px;
   aspect-ratio: 1;
   --c: radial-gradient(farthest-side,var(--sl-color-primary-500) 92%,#0000);
   background: 
