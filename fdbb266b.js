@@ -1,4 +1,4 @@
-import{P as e,x as i,K as o,i as r,r as t,J as n,k as a,a as d}from"./0e22a9d3.js";let s=class extends e{render(){return i`
+import{P as e,x as i,K as o,i as r,r as t,J as n,k as a,a as d}from"./7dd4418c.js";let s=class extends e{render(){return i`
 <section>
   <h1>
     <abbr title>
@@ -46,7 +46,7 @@ import{P as e,x as i,K as o,i as r,r as t,J as n,k as a,a as d}from"./0e22a9d3.j
     <p>---------</p>
   </div>
 
-  <a href=${this.router?.link("/")}>Tuisblad</a>
+  <a href=${this.router?.link()+"/"}>Tuisblad</a>
 </section>
       <footer>
         <span>Environment: ${o.environment}</span>
