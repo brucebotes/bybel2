@@ -81,26 +81,29 @@ define(['./workbox-b1909f40'], (function (workbox) { 'use strict';
    * See https://goo.gl/S9QRab
    */
   workbox.precacheAndRoute([{
-    "url": "/bybel2/1e824427.js",
-    "revision": "64d6c6bdbaa3ac5b2929ac20c6776a13"
+    "url": "/bybel2/174b4edf.js",
+    "revision": "69038e369ed932c080764e6446df2988"
   }, {
-    "url": "/bybel2/2cc7cd5a.js",
-    "revision": "d2dbd14c8687b12a2ce479f165bedfdf"
+    "url": "/bybel2/389cc535.js",
+    "revision": "56a40ea861e61cf2ae3e696fe5ac8720"
   }, {
-    "url": "/bybel2/b2157e03.js",
-    "revision": "20077f8c30d9af49a7ff8a72485f21fa"
+    "url": "/bybel2/5754c09c.js",
+    "revision": "75e83be11dab7c7fec71a99ea8d47884"
   }, {
-    "url": "/bybel2/c9e3b08f.js",
-    "revision": "a5333521de9ab28d1442c8b37d89e42a"
+    "url": "/bybel2/88b7cd1a.js",
+    "revision": "7ca3889f9f391d565e894726b024d30d"
   }, {
-    "url": "/bybel2/d3aa3c4a.js",
-    "revision": "12285bef219cba5f82b82b122601ca98"
+    "url": "/bybel2/a9bac023.js",
+    "revision": "da8f86a9613ed943c4c887504fcea021"
   }, {
-    "url": "/bybel2/eef78e98.js",
-    "revision": "48dccd2fda9ca3272a67a6066f66d854"
+    "url": "/bybel2/c1fb7b95.js",
+    "revision": "d2dfb1aaf5c5e215d8bb397bce442dd9"
+  }, {
+    "url": "/bybel2/f84bed6b.js",
+    "revision": "11994ac928a84faab677ed0f5ef17709"
   }, {
     "url": "/bybel2/index.html",
-    "revision": "346a81f63a64d0ba2ae476695e184131"
+    "revision": "83a1778c3509eb74efca88d5c5e85fc5"
   }, {
     "url": "/bybel2/manifest.webmanifest",
     "revision": "7f1b3ba7cd8d063786c3d1980fc4ffd5"

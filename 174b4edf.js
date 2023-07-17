@@ -1,4 +1,4 @@
-import{P as e,x as i,K as o,i as r,r as t,J as n,k as a,a as d}from"./1e824427.js";let s=class extends e{render(){return i`
+import{P as e,x as i,k as o,i as r,r as t,_ as n,a}from"./a9bac023.js";import{c as d}from"./389cc535.js";let s=class extends e{render(){return i`
 <section>
   <h1>
     <abbr title>
@@ -71,5 +71,5 @@ import{P as e,x as i,K as o,i as r,r as t,J as n,k as a,a as d}from"./1e824427.j
       text-align: center;
     }
     `,r`
-      ${t(n)}
-    `],s=a([d("page-about")],s);export{s as PageAbout};
+      ${t(d)}
+    `],s=n([a("page-about")],s);export{s as PageAbout};
