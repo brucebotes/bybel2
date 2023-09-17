@@ -2,31 +2,30 @@
   "name": "1953/KJV Interliniêre Bybel met TSK verwysings",
   "short_name": "1953/KJV Interliniêre Bybel",
   "description": "Afrikaanse en Engelse Bybel met Treasury of Scripture Knowledge verwysings",
-  "start_url": "/bybel2/?utm_source=web_app_manifest",
+  "start_url": "/?utm_source=web_app_manifest",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "scope": "/bybel2/",
-  "id": "1953KJV2-bybel2",
+  "id": "1953KJV2-root",
   "icons": [
     {
-      "src": "/bybel2/images/manifest/icon-192x192.png",
+      "src": "images/manifest/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/bybel2/images/manifest/icon-192x192-maskable.png",
+      "src": "images/manifest/icon-192x192-maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/bybel2/images/manifest/icon-512x512.png",
+      "src": "images/manifest/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/bybel2/images/manifest/icon-512x512-maskable.png",
+      "src": "images/manifest/icon-512x512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
